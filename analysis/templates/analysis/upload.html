@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload Your CSV File</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background: linear-gradient(135deg, lightgrey, white);
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 1000px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background: lightgray;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background: #16b1ac;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            background: #2984d4;
+        }
+
+        #total {
+            margin-left: 500px;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="total">
+        <h1>Upload Your CSV File</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit"><b>Upload</b></button>
+        </form>
+</body>
+</div>
+
+</html>
